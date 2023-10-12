@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:shelfx/features/function/hex_converter.dart';
+import 'package:shelfx/function/hex_converter.dart';
 
 class FormTextFiledWidget extends StatefulWidget {
   final TextEditingController? controller;
