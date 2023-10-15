@@ -1,17 +1,17 @@
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
 
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_app_check/firebase_app_check.dart';
 // import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:shelfx/function/hex_converter.dart';
+import 'package:shelfx/src/features/authentication/screens/login_screen.dart';
+import 'package:shelfx/src/features/authentication/screens/register_screen.dart';
 import 'firebase_options.dart';
 
-import 'package:shelfx/screens/splash_screen.dart';
-import 'package:shelfx/screens/auth/login_screen.dart';
-import 'package:shelfx/screens/auth/register_screen.dart';
-import 'package:shelfx/screens/stores/stores_screen.dart';
+import 'package:shelfx/src/utils/theme/theme.dart';
+
+import 'package:shelfx/src/features/welcom_screen/screens/welcom_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -58,60 +58,13 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          useMaterial3: true,
-          fontFamily: 'Jost',
-          scaffoldBackgroundColor: const Color(0xffFAFAFA),
-          primarySwatch: const MaterialColor(0xff58539B, {
-            50: Color(0xffeeeef5),
-            100: Color(0xffdeddeb),
-            200: Color(0xffcdcbe1),
-            300: Color(0xffbcbad7),
-            400: Color(0xffaca9cd),
-            500: Color(0xff9b98c3),
-            600: Color(0xff8a87b9),
-            700: Color(0xff7975af),
-            800: Color(0xff6964a5),
-            900: Color(0xff58539b)
-          }),
-          textTheme: const TextTheme(
-            // TextField
-            bodyLarge: TextStyle(
-              color: Color(0xff404040),
-              fontSize: 18,
-            ),
-            // Dispalay
-            displayMedium: TextStyle(
-                color: Colors.white, fontSize: 16, fontWeight: FontWeight.w600),
-            displaySmall: TextStyle(
-                color: Colors.white, fontSize: 14, fontWeight: FontWeight.w400),
-            // Headline
-            headlineLarge: TextStyle(
-                color: Color(0xff404040),
-                fontSize: 26,
-                fontWeight: FontWeight.w600),
-            headlineMedium: TextStyle(
-                color: Color(0xff404040),
-                fontSize: 20,
-                fontWeight: FontWeight.w500),
-            headlineSmall: TextStyle(
-                color: Color(0xff404040),
-                fontSize: 14,
-                fontWeight: FontWeight.w300),
-          ),
-          dividerTheme: const DividerThemeData(
-              thickness: 1,
-              indent: 30,
-              endIndent: 30,
-              color: Color.fromRGBO(244, 244, 244, 1))),
+      theme: TAppTheme.lightTheme,
+      darkTheme: TAppTheme.darkTheme,
+      themeMode: ThemeMode.light,
       routes: {
-        '/': (context) => const SplashScreen(
-              // Here, you can decide whether to show the LoginPage or HomePage based on user authentication
-              child: LoginScreen(),
-            ),
+        '/': (context) => const WelcomScreen(),
         '/login': (context) => const LoginScreen(),
         '/register': (context) => const RegisterScreen(),
-        '/shops': (context) => const StoresScreen(),
       },
     );
   }
