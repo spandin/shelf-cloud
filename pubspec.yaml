@@ -67,7 +67,7 @@ flutter_native_splash:
 
 flutter:
   uses-material-design: true
-  assets: [assets/images/welcoming.svg]
+  assets: [assets/images/]
   fonts:
     - family: Jost
       fonts:

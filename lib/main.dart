@@ -5,11 +5,12 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_app_check/firebase_app_check.dart';
 // import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:shelfx/src/features/stores/screens/stores_screen.dart';
+import 'package:shelfx/src/features/home/screens/home_screen.dart';
+import 'package:shelfx/src/features/home/screens/stores_screen.dart';
 import 'firebase_options.dart';
 
 import 'package:shelfx/src/utils/theme/theme.dart';
-import 'package:shelfx/src/features/welcom_screen/screens/welcom_screen.dart';
+import 'package:shelfx/src/features/authentication/screens/welcom_screen.dart';
 import 'package:shelfx/src/features/authentication/screens/login_screen.dart';
 import 'package:shelfx/src/features/authentication/screens/register_screen.dart';
 
@@ -66,7 +67,7 @@ class App extends StatelessWidget {
         '/': (context) => const WelcomScreen(),
         '/login': (context) => const LoginScreen(),
         '/register': (context) => const RegisterScreen(),
-        '/stores': (context) => const StoresScreen(),
+        '/home': (context) => const HomeScreen(),
       },
     );
   }
