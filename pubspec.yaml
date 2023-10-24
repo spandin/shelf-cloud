@@ -45,6 +45,7 @@ dependencies:
   firebase_crashlytics: ^3.3.7
   flutter_svg: ^2.0.7
   flutter_native_splash: ^2.3.3
+  get: ^4.6.6
 
 dev_dependencies:
   flutter_test:

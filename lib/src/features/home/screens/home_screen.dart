@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shelfx/src/features/chat/screens/chat_screen.dart';
+import 'package:shelfx/src/features/home/screens/add_product_screen.dart';
 import 'package:shelfx/src/features/home/screens/stores_screen.dart';
 import 'package:shelfx/src/utils/theme/theme.dart';
 
@@ -45,7 +46,18 @@ class _HomeScreenState extends State<HomeScreen> {
                 Icons.store_outlined,
                 color: Colors.white,
               ),
-              label: 'Сторы',
+              label: 'Сторсы',
+            ),
+            NavigationDestination(
+              selectedIcon: Icon(
+                Icons.add_circle,
+                color: Colors.white,
+              ),
+              icon: Icon(
+                Icons.add_circle_outline_rounded,
+                color: Colors.white,
+              ),
+              label: 'Добавить',
             ),
             NavigationDestination(
               selectedIcon: Icon(
@@ -62,8 +74,9 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       body: <Widget>[
-        StoresScreen(),
-        ChatScreen(),
+        const StoresScreen(),
+        const AddProductScreen(),
+        const ChatScreen(),
       ][currentPageIndex],
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shelfx/src/features/home/screens/home_screen.dart';
+import 'package:shelfx/src/utils/theme/theme.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -50,6 +51,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       TextFormField(
                         style: const TextStyle(fontSize: 16),
                         decoration: const InputDecoration(
+                          prefixIcon: Icon(Icons.person_outline_rounded),
                           label: Text('Имя'),
                         ),
                         validator: (value) {
@@ -65,6 +67,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       TextFormField(
                         style: const TextStyle(fontSize: 16),
                         decoration: const InputDecoration(
+                          prefixIcon: Icon(Icons.alternate_email_outlined),
                           label: Text('Email'),
                         ),
                         validator: (value) {
@@ -79,6 +82,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                       TextFormField(
                         decoration: const InputDecoration(
+                          prefixIcon: Icon(Icons.password_outlined),
+                          suffixIcon: IconButton(
+                              onPressed: null,
+                              icon: Icon(Icons.remove_red_eye_sharp)),
                           label: Text('Пароль'),
                         ),
                         obscureText: true,
@@ -96,8 +103,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         width: double.infinity,
                         child: ElevatedButton(
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(
-                                const Color(0xff484f7b)),
                             foregroundColor:
                                 MaterialStateProperty.all<Color>(Colors.white),
                           ),

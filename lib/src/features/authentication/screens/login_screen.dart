@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:shelfx/src/utils/theme/theme.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -45,10 +46,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 Form(
                   key: _formKey,
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
                     children: <Widget>[
                       TextFormField(
-                        style: const TextStyle(fontSize: 16),
                         decoration: const InputDecoration(
+                          prefixIcon: Icon(Icons.alternate_email_outlined),
                           label: Text('Email'),
                         ),
                         validator: (value) {
@@ -63,6 +65,10 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       TextFormField(
                         decoration: const InputDecoration(
+                          prefixIcon: Icon(Icons.password_outlined),
+                          suffixIcon: IconButton(
+                              onPressed: null,
+                              icon: Icon(Icons.remove_red_eye_sharp)),
                           label: Text('Пароль'),
                         ),
                         obscureText: true,
@@ -74,14 +80,20 @@ class _LoginScreenState extends State<LoginScreen> {
                         },
                       ),
                       const SizedBox(
-                        height: 15,
+                        height: 10,
+                      ),
+                      const Text(
+                        'Забыли пароль?',
+                        style: TextStyle(
+                            fontSize: 14, fontWeight: FontWeight.w300),
+                      ),
+                      const SizedBox(
+                        height: 10,
                       ),
                       SizedBox(
                         width: double.infinity,
                         child: ElevatedButton(
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(
-                                const Color(0xff484f7b)),
                             foregroundColor:
                                 MaterialStateProperty.all<Color>(Colors.white),
                           ),
@@ -108,13 +120,15 @@ class _LoginScreenState extends State<LoginScreen> {
                       const SizedBox(
                         height: 30,
                       ),
-                      const Text(
-                        'или используя сервисы',
-                        style: TextStyle(fontWeight: FontWeight.w300),
-                      )
                     ],
                   ),
                 ),
+                const Center(
+                  child: Text(
+                    'или используя сервисы',
+                    style: TextStyle(fontWeight: FontWeight.w300),
+                  ),
+                )
               ],
             ),
           ),

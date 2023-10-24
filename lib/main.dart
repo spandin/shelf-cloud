@@ -5,14 +5,14 @@ import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_app_check/firebase_app_check.dart';
 // import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:shelfx/src/features/home/screens/home_screen.dart';
-import 'package:shelfx/src/features/home/screens/stores_screen.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'firebase_options.dart';
 
 import 'package:shelfx/src/utils/theme/theme.dart';
 import 'package:shelfx/src/features/authentication/screens/welcom_screen.dart';
 import 'package:shelfx/src/features/authentication/screens/login_screen.dart';
 import 'package:shelfx/src/features/authentication/screens/register_screen.dart';
+import 'package:shelfx/src/features/home/screens/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,7 +35,7 @@ void main() async {
   FlutterError.onError = (errorDetails) {
     FirebaseCrashlytics.instance.recordFlutterFatalError(errorDetails);
   };
-  // Pass all uncaught asynchronous errors that aren't handled by the Flutter framework to Crashlytics
+
   PlatformDispatcher.instance.onError = (error, stack) {
     FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
     return true;
@@ -58,7 +58,7 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,

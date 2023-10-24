@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:shelfx/src/features/home/screens/store_page_screen.dart';
 import 'package:shelfx/src/utils/theme/theme.dart';
 
 class StoresScreen extends StatelessWidget {
@@ -9,12 +11,12 @@ class StoresScreen extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          SliverAppBar(
+          const SliverAppBar(
             automaticallyImplyLeading: false,
             pinned: true,
             snap: true,
             floating: true,
-            title: const Text(
+            title: Text(
               'Сторсы',
               style: TextStyle(
                 fontSize: 24,
@@ -24,38 +26,10 @@ class StoresScreen extends StatelessWidget {
             centerTitle: true,
             backgroundColor: primaryColor,
             foregroundColor: Colors.white,
-            iconTheme: const IconThemeData(color: Colors.white),
-            leading: const Icon(Icons.account_circle),
+            iconTheme: IconThemeData(color: Colors.white, size: 30),
+            leading: Icon(Icons.account_circle),
             leadingWidth: 80,
-            bottom: PreferredSize(
-              preferredSize: const Size.fromHeight(76),
-              child: Container(
-                width: double.infinity,
-                margin:
-                    const EdgeInsets.symmetric(vertical: 12, horizontal: 24),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
-                decoration: BoxDecoration(
-                    color: Theme.of(context).hintColor.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(6)),
-                child: const Row(
-                  children: [
-                    Icon(Icons.search_rounded, color: Colors.white),
-                    SizedBox(
-                      width: 12,
-                    ),
-                    Text(
-                      'Поиск',
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            toolbarHeight: 90,
           ),
           const SliverToBoxAdapter(child: SizedBox(height: 12)),
           SliverList.builder(
@@ -94,7 +68,7 @@ class StoreCard extends StatelessWidget {
             children: [
               GestureDetector(
                 onTap: () {
-                  print('object');
+                  Get.to(() => const StoresPageScreen());
                 },
                 child: const Text(
                   'Название стора',

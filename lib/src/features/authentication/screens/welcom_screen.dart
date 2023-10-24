@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:shelfx/src/features/authentication/screens/login_screen.dart';
 import 'package:shelfx/src/features/authentication/screens/register_screen.dart';
-import 'package:shelfx/src/features/home/screens/home_screen.dart';
 
 class WelcomScreen extends StatelessWidget {
   const WelcomScreen({super.key});
@@ -15,7 +15,7 @@ class WelcomScreen extends StatelessWidget {
         SvgPicture.asset('assets/images/cloud.svg', fit: BoxFit.cover);
 
     return Scaffold(
-      backgroundColor: const Color(0xff343B6C),
+      backgroundColor: Colors.white,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -35,7 +35,7 @@ class WelcomScreen extends StatelessWidget {
                     Text(
                       'Добро пожаловать',
                       style: TextStyle(
-                          color: Colors.white,
+                          color: Color(0xff151515),
                           fontSize: 26,
                           fontWeight: FontWeight.w600),
                     ),
@@ -45,7 +45,7 @@ class WelcomScreen extends StatelessWidget {
                     Text(
                       'Пройдите аутентификацию Shelf Cloud и пользуйтесь всеми функциями приложения.',
                       style: TextStyle(
-                          color: Color(0xff9a9db6),
+                          color: Color(0xff505050),
                           fontSize: 16,
                           fontWeight: FontWeight.w300),
                     ),
@@ -59,17 +59,10 @@ class WelcomScreen extends StatelessWidget {
                     Expanded(
                       child: OutlinedButton(
                         style: ButtonStyle(
-                          foregroundColor:
-                              MaterialStateProperty.all<Color>(Colors.white),
+                          foregroundColor: MaterialStateProperty.all<Color>(
+                              const Color(0xff151515)),
                         ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const LoginScreen(),
-                            ),
-                          );
-                        },
+                        onPressed: () => Get.to(() => const LoginScreen()),
                         child: const Text(
                           'Вход',
                           style: TextStyle(
@@ -85,22 +78,10 @@ class WelcomScreen extends StatelessWidget {
                     Expanded(
                       child: ElevatedButton(
                         style: ButtonStyle(
-                          fixedSize: MaterialStateProperty.all<Size?>(
-                            const Size.fromHeight(45),
-                          ),
-                          backgroundColor: MaterialStateProperty.all<Color>(
-                              const Color(0xff15182B)),
                           foregroundColor:
                               MaterialStateProperty.all<Color>(Colors.white),
                         ),
-                        onPressed: () {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const RegisterScreen(),
-                            ),
-                          );
-                        },
+                        onPressed: () => Get.to(() => const RegisterScreen()),
                         child: const Text(
                           'Регистрация',
                           style: TextStyle(
