@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shelfx/src/utils/theme/widget_themes/button_theme.dart';
 import 'package:shelfx/src/utils/theme/widget_themes/input_theme.dart';
+import 'package:shelfx/src/utils/theme/widget_themes/text_theme.dart';
 
 const primaryColor = Color(0xff15182B);
 
@@ -25,33 +26,12 @@ class TAppTheme {
     inputDecorationTheme: TInput.lightInputTheme,
     elevatedButtonTheme: TButton.lightElevatedButtonTheme,
     outlinedButtonTheme: TButton.lightOtlinedButtonTheme,
-    textTheme: const TextTheme(
-      headlineLarge: TextStyle(
-        color: Color(0xff151515),
-        fontSize: 26,
-        fontWeight: FontWeight.w600,
-      ),
-      headlineMedium: TextStyle(
-        color: Color(0xff151515),
-        fontSize: 24,
-        fontWeight: FontWeight.w600,
-      ),
-      headlineSmall: TextStyle(
-        color: Color(0xff151515),
-        fontSize: 22,
-        fontWeight: FontWeight.w600,
-      ),
-      bodyMedium: TextStyle(
-        color: Color(0xff505050),
-        fontSize: 16,
-        fontWeight: FontWeight.w300,
-      ),
-      bodySmall: TextStyle(
-        color: Color(0xff505050),
-        fontSize: 14,
-        fontWeight: FontWeight.w300,
-      ),
+    dividerTheme: const DividerThemeData(
+      color: Color(0xffF2F4FF),
+      indent: 20,
+      endIndent: 20,
     ),
+    textTheme: TText.lightTextTheme,
   );
 
   static ThemeData darkTheme = ThemeData(
@@ -74,5 +54,6 @@ class TAppTheme {
     inputDecorationTheme: TInput.lightInputTheme,
     elevatedButtonTheme: TButton.lightElevatedButtonTheme,
     outlinedButtonTheme: TButton.lightOtlinedButtonTheme,
+    textTheme: TText.darkTextTheme,
   );
 }

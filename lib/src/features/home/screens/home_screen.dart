@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shelfx/src/features/chat/screens/chat_screen.dart';
 import 'package:shelfx/src/features/home/screens/add_product_screen.dart';
-import 'package:shelfx/src/features/home/screens/stores_screen.dart';
+import 'package:shelfx/src/features/stores/screens/stores/stores_screen.dart';
 import 'package:shelfx/src/utils/theme/theme.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -22,8 +22,9 @@ class _HomeScreenState extends State<HomeScreen> {
           labelTextStyle: MaterialStateProperty.resolveWith<TextStyle>(
             (Set<MaterialState> states) =>
                 states.contains(MaterialState.selected)
-                    ? const TextStyle(color: Color.fromARGB(255, 255, 255, 255))
-                    : const TextStyle(color: Color(0xffaeb1c4)),
+                    ? const TextStyle(
+                        color: primaryColor, fontWeight: FontWeight.w500)
+                    : const TextStyle(color: Color(0xff505050)),
           ),
         ),
         child: NavigationBar(
@@ -33,8 +34,9 @@ class _HomeScreenState extends State<HomeScreen> {
             });
           },
           height: 70,
-          backgroundColor: primaryColor,
-          indicatorColor: const Color(0xff484f7b),
+          backgroundColor: const Color.fromARGB(0, 255, 255, 255),
+          surfaceTintColor: const Color.fromARGB(0, 255, 255, 255),
+          indicatorColor: primaryColor,
           selectedIndex: currentPageIndex,
           destinations: const <Widget>[
             NavigationDestination(
@@ -44,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               icon: Icon(
                 Icons.store_outlined,
-                color: Colors.white,
+                color: primaryColor,
               ),
               label: 'Сторсы',
             ),
@@ -55,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               icon: Icon(
                 Icons.add_circle_outline_rounded,
-                color: Colors.white,
+                color: primaryColor,
               ),
               label: 'Добавить',
             ),
@@ -66,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               icon: Icon(
                 Icons.chat_rounded,
-                color: Colors.white,
+                color: primaryColor,
               ),
               label: 'Чаты',
             ),

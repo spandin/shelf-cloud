@@ -13,14 +13,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
-    SvgPicture authBg = SvgPicture.asset('assets/images/auth_background.svg',
-        fit: BoxFit.cover);
+    SvgPicture cloudSvg =
+        SvgPicture.asset('assets/images/cloud.svg', fit: BoxFit.cover);
 
     return Scaffold(
       body: Stack(
         children: <Widget>[
           Positioned(
-            child: Align(alignment: Alignment.topRight, child: authBg),
+            child: Align(alignment: Alignment.topRight, child: cloudSvg),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
