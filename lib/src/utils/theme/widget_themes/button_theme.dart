@@ -4,6 +4,12 @@ class TButton {
   static ElevatedButtonThemeData lightElevatedButtonTheme =
       ElevatedButtonThemeData(
     style: ButtonStyle(
+      textStyle: MaterialStateProperty.all<TextStyle?>(
+        const TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
       fixedSize: MaterialStateProperty.all<Size?>(
         const Size.fromHeight(45),
       ),
@@ -20,6 +26,12 @@ class TButton {
   static OutlinedButtonThemeData lightOtlinedButtonTheme =
       OutlinedButtonThemeData(
     style: ButtonStyle(
+      textStyle: MaterialStateProperty.all<TextStyle?>(
+        const TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
       fixedSize: MaterialStateProperty.all<Size?>(
         const Size.fromHeight(45),
       ),

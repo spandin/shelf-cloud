@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shelfx/src/features/home/screens/home_screen.dart';
-import 'package:shelfx/src/utils/theme/theme.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -33,14 +32,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   height: 50,
                   child: Icon(Icons.arrow_back, size: 24),
                 ),
-                const Text(
-                  'Зарегистрироваться',
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
-                ),
-                const Text(
-                  'используя Email и Пароль',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
-                ),
+                Text('Зарегистрироваться',
+                    style: Theme.of(context).textTheme.headlineMedium),
+                Text('используя Email и Пароль',
+                    style: Theme.of(context).textTheme.bodySmall),
                 const SizedBox(
                   height: 15,
                 ),
@@ -132,10 +127,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       const SizedBox(
                         height: 30,
                       ),
-                      const Text(
-                        'или используя сервисы',
-                        style: TextStyle(fontWeight: FontWeight.w300),
-                      )
+                      Text('или используя сервисы',
+                          style: Theme.of(context).textTheme.bodySmall),
                     ],
                   ),
                 ),

@@ -15,7 +15,6 @@ class WelcomScreen extends StatelessWidget {
         SvgPicture.asset('assets/images/cloud.svg', fit: BoxFit.cover);
 
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -29,26 +28,17 @@ class WelcomScreen extends StatelessWidget {
                 const SizedBox(
                   height: 40,
                 ),
-                const Column(
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Добро пожаловать',
-                      style: TextStyle(
-                          color: Color(0xff151515),
-                          fontSize: 26,
-                          fontWeight: FontWeight.w600),
-                    ),
-                    SizedBox(
+                    Text('Добро пожаловать',
+                        style: Theme.of(context).textTheme.headlineLarge),
+                    const SizedBox(
                       height: 5,
                     ),
                     Text(
-                      'Пройдите аутентификацию Shelf Cloud и пользуйтесь всеми функциями приложения.',
-                      style: TextStyle(
-                          color: Color(0xff505050),
-                          fontSize: 16,
-                          fontWeight: FontWeight.w300),
-                    ),
+                        'Пройдите аутентификацию Shelf Cloud и пользуйтесь всеми функциями приложения.',
+                        style: Theme.of(context).textTheme.bodyMedium),
                   ],
                 ),
                 const SizedBox(
@@ -63,13 +53,7 @@ class WelcomScreen extends StatelessWidget {
                               const Color(0xff151515)),
                         ),
                         onPressed: () => Get.to(() => const LoginScreen()),
-                        child: const Text(
-                          'Вход',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
+                        child: const Text('Вход'),
                       ),
                     ),
                     const SizedBox(
@@ -82,13 +66,7 @@ class WelcomScreen extends StatelessWidget {
                               MaterialStateProperty.all<Color>(Colors.white),
                         ),
                         onPressed: () => Get.to(() => const RegisterScreen()),
-                        child: const Text(
-                          'Регистрация',
-                          style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
+                        child: const Text('Регистрация'),
                       ),
                     )
                   ],

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shelfx/src/utils/theme/theme.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -32,14 +31,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 50,
                   child: Icon(Icons.arrow_back, size: 24),
                 ),
-                const Text(
-                  'Войти в аккаунт',
-                  style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
-                ),
-                const Text(
-                  'используя Email и Пароль',
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.w300),
-                ),
+                Text('Войти в аккаунт',
+                    style: Theme.of(context).textTheme.headlineMedium),
+                Text('используя Email и Пароль',
+                    style: Theme.of(context).textTheme.bodySmall),
                 const SizedBox(
                   height: 15,
                 ),
@@ -82,11 +77,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       const SizedBox(
                         height: 10,
                       ),
-                      const Text(
-                        'Забыли пароль?',
-                        style: TextStyle(
-                            fontSize: 14, fontWeight: FontWeight.w300),
-                      ),
+                      Text('Забыли пароль?',
+                          style: Theme.of(context).textTheme.bodySmall),
                       const SizedBox(
                         height: 10,
                       ),
@@ -123,11 +115,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                 ),
-                const Center(
-                  child: Text(
-                    'или используя сервисы',
-                    style: TextStyle(fontWeight: FontWeight.w300),
-                  ),
+                Center(
+                  child: Text('или используя сервисы',
+                      style: Theme.of(context).textTheme.bodySmall),
                 )
               ],
             ),
