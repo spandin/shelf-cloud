@@ -23,14 +23,24 @@ class TAppTheme {
       900: Color(0xff15182B),
     }),
     fontFamily: 'Jost',
-    inputDecorationTheme: TInput.lightInputTheme,
-    elevatedButtonTheme: TButton.lightElevatedButtonTheme,
-    outlinedButtonTheme: TButton.lightOtlinedButtonTheme,
+    scaffoldBackgroundColor: Colors.white,
+    appBarTheme: const AppBarTheme(
+      centerTitle: true,
+      backgroundColor: Colors.white,
+      surfaceTintColor: Colors.white,
+    ),
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      backgroundColor: primaryColor,
+      foregroundColor: primaryColor,
+    ),
     dividerTheme: const DividerThemeData(
       color: Color(0xffF2F4FF),
       indent: 20,
       endIndent: 20,
     ),
+    inputDecorationTheme: TInput.lightInputTheme,
+    elevatedButtonTheme: TButton.lightElevatedButtonTheme,
+    outlinedButtonTheme: TButton.lightOtlinedButtonTheme,
     textTheme: TText.lightTextTheme,
   );
 

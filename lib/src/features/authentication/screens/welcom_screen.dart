@@ -20,7 +20,7 @@ class WelcomScreen extends StatelessWidget {
         children: [
           Align(alignment: Alignment.topRight, child: cloudSvg),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 40),
+            padding: const EdgeInsets.all(40),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
               children: [

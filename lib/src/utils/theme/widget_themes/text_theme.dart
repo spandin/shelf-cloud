@@ -10,12 +10,12 @@ class TText {
     headlineMedium: TextStyle(
       color: Color(0xff151515),
       fontSize: 24,
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w500,
     ),
     headlineSmall: TextStyle(
       color: Color(0xff151515),
       fontSize: 22,
-      fontWeight: FontWeight.w600,
+      fontWeight: FontWeight.w500,
     ),
     bodyLarge: TextStyle(
       color: Color(0xff505050),

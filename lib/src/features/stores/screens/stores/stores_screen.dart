@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:shelfx/src/features/home%20copy/screens/stores_screen.dart';
+import 'package:shelfx/src/common_widgets/account_icon.dart';
+import 'package:shelfx/src/features/stores/screens/stores/widgets/store_card.dart';
 
 class StoresScreen extends StatelessWidget {
   const StoresScreen({super.key});
@@ -10,25 +11,19 @@ class StoresScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       body: CustomScrollView(
         slivers: [
-          const SliverAppBar(
+          SliverAppBar(
             automaticallyImplyLeading: false,
             pinned: true,
             snap: false,
             title: Text(
               'Сторсы',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w500,
-              ),
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
-            centerTitle: true,
-            backgroundColor: Colors.white,
-            surfaceTintColor: Colors.white,
-            foregroundColor: Color(0xff151515),
-            iconTheme: IconThemeData(color: Color(0xff151515), size: 28),
-            leading: Icon(Icons.account_circle),
+            leading: const AccountIcon(
+              size: 26,
+            ),
             leadingWidth: 80,
-            bottom: PreferredSize(
+            bottom: const PreferredSize(
               preferredSize: Size.fromHeight(24),
               child: Divider(
                 height: 1,

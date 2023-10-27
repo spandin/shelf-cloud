@@ -4,11 +4,9 @@ class TButton {
   static ElevatedButtonThemeData lightElevatedButtonTheme =
       ElevatedButtonThemeData(
     style: ButtonStyle(
+      foregroundColor: MaterialStateProperty.all<Color?>(Colors.white),
       textStyle: MaterialStateProperty.all<TextStyle?>(
-        const TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.w500,
-        ),
+        const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
       ),
       fixedSize: MaterialStateProperty.all<Size?>(
         const Size.fromHeight(50),

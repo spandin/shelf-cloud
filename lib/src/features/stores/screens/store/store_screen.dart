@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shelfx/src/common_widgets/account_icon.dart';
 import 'package:shelfx/src/features/stores/screens/store/widgets/product_card.dart';
 import 'package:shelfx/src/utils/theme/theme.dart';
 
@@ -9,6 +10,14 @@ class StoreScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        mini: true,
+        child: const Icon(
+          Icons.add,
+          color: Colors.white,
+        ),
+      ),
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
@@ -16,22 +25,16 @@ class StoreScreen extends StatelessWidget {
             pinned: true,
             snap: true,
             floating: true,
-            title: const Text(
+            title: Text(
               'Название магазина',
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.w500,
-              ),
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
-            centerTitle: true,
-            backgroundColor: Colors.white,
-            surfaceTintColor: Colors.white,
-            foregroundColor: primaryColor,
-            iconTheme: const IconThemeData(color: primaryColor, size: 28),
-            leading: const Icon(Icons.account_circle),
+            leading: const AccountIcon(
+              size: 26,
+            ),
             leadingWidth: 80,
             bottom: PreferredSize(
-              preferredSize: const Size.fromHeight(76),
+              preferredSize: const Size.fromHeight(69),
               child: Column(
                 children: [
                   Container(
