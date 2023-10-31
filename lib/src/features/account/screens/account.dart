@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:shelfx/src/common_widgets/account_icon.dart';
+import 'package:shelfx/src/repository/authentication_repository/authentication_repository.dart';
 
 class AccountScreen extends StatelessWidget {
   const AccountScreen({super.key});
@@ -14,6 +16,12 @@ class AccountScreen extends StatelessWidget {
         ),
         leading: const Icon(Icons.arrow_back),
         leadingWidth: 80,
+        bottom: const PreferredSize(
+          preferredSize: Size.fromHeight(20),
+          child: Divider(
+            height: 1,
+          ),
+        ),
       ),
       body: Padding(
         padding:
@@ -30,7 +38,9 @@ class AccountScreen extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  AuthenticationRepository.instance.logout();
+                },
                 child: const Text('Выйти'),
               ),
             ),

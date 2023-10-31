@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:shelfx/src/features/authentication/screens/login_screen.dart';
-import 'package:shelfx/src/features/authentication/screens/register_screen.dart';
+import 'package:shelfx/src/features/authentication/screens/login/login_screen.dart';
+import 'package:shelfx/src/features/authentication/screens/register/register_screen.dart';
 
 class WelcomScreen extends StatelessWidget {
   const WelcomScreen({super.key});

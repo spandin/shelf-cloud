@@ -1,18 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:flutter/foundation.dart';
 
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:firebase_app_check/firebase_app_check.dart';
 // import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:get/get_navigation/get_navigation.dart';
 import 'firebase_options.dart';
 
+import 'package:shelfx/src/repository/authentication_repository/authentication_repository.dart';
 import 'package:shelfx/src/utils/theme/theme.dart';
-import 'package:shelfx/src/features/authentication/screens/welcom_screen.dart';
-import 'package:shelfx/src/features/authentication/screens/login_screen.dart';
-import 'package:shelfx/src/features/authentication/screens/register_screen.dart';
-import 'package:shelfx/src/features/home/screens/home_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,7 +25,7 @@ void main() async {
 
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
-  );
+  ).then((value) => Get.put(AuthenticationRepository()));
 
   FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterFatalError;
 
@@ -63,12 +60,13 @@ class App extends StatelessWidget {
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
       themeMode: ThemeMode.light,
-      routes: {
-        '/': (context) => const WelcomScreen(),
-        '/login': (context) => const LoginScreen(),
-        '/register': (context) => const RegisterScreen(),
-        '/home': (context) => const HomeScreen(),
-      },
+      home: const CircularProgressIndicator(),
+      // routes: {
+      //   '/': (context) => const HomeScreen(),
+      //   '/login': (context) => const LoginScreen(),
+      //   '/register': (context) => const RegisterScreen(),
+      //   '/home': (context) => const HomeScreen(),
+      // },
     );
   }
 }
